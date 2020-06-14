@@ -1,44 +1,307 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Riwert GitHub Page">
-    <meta name="author" content="Revert">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link href="css/style.css" rel="stylesheet">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-    <link rel="manifest" href="img/favicon/site.webmanifest">
-    <title>Riwert GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Robert Wierzchowski - Web Developer</title>
+
+    <meta name="description" content="Hello, my name is Robert and I am a programmer (Web Developer). I am interested in optimization, positive psychology and personal development. I also enjoy various forms of recreational activity.">
+    <meta name="author" content="revert@revert.pl">
+
+    <meta property="og:title" content="Robert Wierzchowski">
+    <meta property="og:description" content="Web Developer">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://riwert.github.io">
+    <meta property="og:image" content="media/profile.jpg">
+
+    <meta name="twitter:title" content="Robert Wierzchowski">
+    <meta name="twitter:description" content="Web Developer">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="media/profile.jpg">
+
+    <meta name="theme-color" content="#B1213F">
+    <meta name="msapplication-TileColor" content="#B1213F">
+
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css">
+
+    <link rel="canonical" href="https://riwert.github.io">
   </head>
-  <body class="text-center">
-    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-      <header class="masthead mb-auto">
-        <div class="inner">
-          <h3 class="masthead-brand">Riwert</h3>
-          <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="/">Home</a>
-            <a class="nav-link" href="https://revert.pl">revert.pl</a>
-            <a class="nav-link" href="https://github.com/riwert">GitHub</a>
-          </nav>
-        </div>
-      </header>
 
-      <main role="main" class="inner cover">
-        <h1 class="cover-heading">Hello!</h1>
-        <p class="lead">This is a filler for my GitHub page.</p>
-        <p class="lead">
-          <a href="https://github.com/riwert" class="btn btn-lg btn-secondary">Check my repos</a>
-        </p>
-      </main>
+  <body class="font-sans antialiased text-gray-100 leading-normal tracking-wider">
+    <div class="max-w-4xl flex items-center h-auto lg:h-screen flex-wrap mx-auto my-32 lg:my-0">
+      <!-- Background video or image -->
+      <div id="video-container" class="opacity-0 transition-opacity duration-300 fixed z-0 top-0 left-0 w-full h-full overflow-hidden bg-center bg-cover bg-fixed" data-bg-img="media/bg.jpg">
+        <video id="video" class="opacity-0 transition-opacity duration-700 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 min-w-full min-h-full object-cover" muted loop preload="none" data-src="media/video.mov" data-type="video/mp4"></video>
+        <div id="overlay" class="absolute top-0 left-0 w-full h-full z-1 bg-black bg-opacity-25"></div>
+      </div>
+      <!-- / Background video or image -->
 
-      <footer class="mastfoot mt-auto">
-        <div class="inner">
-          <p>Made by <a href="https://revert.pl" title="Web Developer">Revert</a></p>
+      <!-- Main Col -->
+      <div class="w-full lg:w-2/5 mx-6 lg:mx-0">
+
+        <div id="profile" class="relative z-10 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-xl bg-opacity-50 bg-gray-900 transition duration-300 p-4 md:px-10 md:py-6 text-center lg:text-left">
+
+          <!-- Image for mobile view -->
+          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-48 w-48 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none" data-bg-img="media/profile.jpg" aria-label="Robert Wierzchowski"></div>
+          <!-- / Image for mobile view -->
+
+          <!-- Main title -->
+          <h1 class="text-2xl text-center font-bold pt-6 lg:pt-0">Robert Wierzchowski</h1>
+          <!-- / Main title -->
+
+          <!-- Underline -->
+          <div class="mx-auto w-4/5 pt-3 border-b-2 border-red-500 opacity-25"></div>
+          <!-- / Underline -->
+
+          <!-- Main info -->
+          <div class="inline-block self-center">
+            <p class="pt-4 text-xs lg:text-sm flex items-center justify-start">
+              <i class="fas fa-user-circle text-xl text-red-700 hover:text-red-600 pr-4"></i>
+              Riwert / Revert
+            </p>
+            <p class="pt-2 text-base font-bold flex items-center justify-start">
+              <i class="fas fa-briefcase text-xl text-red-700 hover:text-red-600 pr-4"></i>
+              Web Developer
+            </p>
+            <p class="pt-2 text-xs lg:text-sm flex items-center justify-start">
+              <i class="fas fa-globe-europe text-xl text-red-700 hover:text-red-600 pr-4"></i>
+              Poland / Poznań
+            </p>
+          </div>
+          <!-- / Main info -->
+
+          <!-- Description -->
+          <p class="js-lang-en pt-6 text-sm">
+            Hello, my name is Robert and I am a programmer (Web Developer). I am interested in optimization, positive psychology and personal development. I also enjoy various forms of recreational activity.
+          </p>
+          <p class="js-lang-pl pt-6 text-sm hidden opacity-0">
+            Witaj, nazywam się Robert i jestem programistą (Web Developerem). Interesuję się optymalizacją, pozytywną psychologią oraz rozwojem osobistym. Lubię też różne formy aktywności rekreacyjnej.
+          </p>
+          <!-- / Description -->
+
+          <!-- CTA -->
+          <div class="pt-12 pb-6 text-center">
+            <a class="link inline-block bg-red-700 hover:bg-red-800 focus:bg-red-800 border-b-4 border-red-800 transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none text-white font-bold py-2 px-4 rounded-lg" href="mailto:revert@revert.pl" data-tippy-content="E-mail">
+              <span class="js-lang-en">Get in touch</span>
+              <span class="js-lang-pl hidden opacity-0">Skontaktuj się ze mną</span>
+            </a>
+          </div>
+          <!-- / CTA -->
+
+          <!-- Social icons -->
+          <div class="mt-6 pb-6 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
+            <a class="link transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none" href="tel:+48503529991" data-tippy-content="Telefon" aria-label="Telefon">
+              <i class="fas fa-mobile-alt text-2xl text-gray-600 hover:text-red-600"></i>
+            </a>
+            <a class="link transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none" href="mailto:revert@revert.pl" data-tippy-content="Email" aria-label="Email">
+              <i class="far fa-envelope text-2xl text-gray-600 hover:text-red-600"></i>
+            </a>
+            <a class="link transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.facebook.com/riwert" data-tippy-content="Facebook" aria-label="Facebook" target="_blank" rel="noopener">
+              <i class="fab fa-facebook text-2xl text-gray-600 hover:text-red-600"></i>
+            </a>
+            <a class="link transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none" href="https://github.com/riwert" data-tippy-content="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
+              <i class="fab fa-github text-2xl text-gray-600 hover:text-red-600"></i>
+            </a>
+            <a class="link transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none" href="https://pinterest.com/riwerts" data-tippy-content="Pinterest" aria-label="Pinterest" target="_blank" rel="noopener">
+              <i class="fab fa-pinterest text-2xl text-gray-600 hover:text-red-600"></i>
+            </a>
+          </div>
+          <!-- / Social icons -->
+
         </div>
-      </footer>
+      </div>
+      <!-- / Main Col -->
+
+      <!-- Dektop Img Col -->
+      <div class="relative z-20 w-full lg:w-3/5">
+        <!-- Big profile image for side bar (desktop) -->
+        <img src="media/profile.jpg" alt="Robert Wierzchowski" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block transform transition-transform duration-300 hover:scale-105 focus:scale-105">
+        <!--/ Big profile image for side bar (desktop) -->
+      </div>
+      <!--/ Dektop Img Col -->
+
+      <!-- Pin to top right corner -->
+      <div class="absolute top-0 right-0 h-12 w-full p-4 flex justify-between sm:justify-end items-center">
+        <button class="js-change-lang inline-block transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white mx-4">PL</button>
+        <button class="js-change-bg inline-block transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white mx-4">📷</button>
+        <button class="js-change-theme inline-block transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white mx-4">☀️</button>
+      </div>
+      <!-- / Pin to top right corner -->
     </div>
+
+    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script>
+      // Init tooltips
+      tippy('.link', {
+        placement: 'bottom',
+      })
+
+      // Toggle language between PL and EN
+      var lang = 'en';
+      var langToggler = document.querySelector('.js-change-lang')
+      var html = document.querySelector('html')
+
+      function toggleLang() {
+        if (langToggler.innerText == 'PL') {
+          lang = 'pl'
+          langToggler.innerText = 'EN'
+
+          var plTexts = document.querySelectorAll('.js-lang-pl')
+          for (var i = 0, len = plTexts.length; i < len; i++) {
+            plTexts[i].classList.remove('hidden', 'opacity-0')
+          }
+
+          var enTexts = document.querySelectorAll('.js-lang-en')
+          for (var i = 0, len = enTexts.length; i < len; i++) {
+            enTexts[i].classList.add('hidden', 'opacity-0')
+          }
+        } else {
+          lang = 'en'
+          langToggler.innerText = 'PL'
+
+          var enTexts = document.querySelectorAll('.js-lang-en')
+          for (var i = 0, len = enTexts.length; i < len; i++) {
+            enTexts[i].classList.remove('hidden', 'opacity-0')
+          }
+
+          var plTexts = document.querySelectorAll('.js-lang-pl')
+          for (var i = 0, len = plTexts.length; i < len; i++) {
+            plTexts[i].classList.add('hidden', 'opacity-0')
+          }
+        }
+        html.setAttribute('lang', lang)
+        localStorage.setItem('lang', lang)
+      }
+
+      if (localStorage.getItem('lang') && localStorage.getItem('lang') != lang) {
+        toggleLang()
+      }
+
+      langToggler.addEventListener('click', function() {
+        toggleLang()
+      })
+
+      // Toggle day and night mode
+      var mode = 'night';
+      var modeToggler = document.querySelector('.js-change-theme')
+      var body = document.querySelector('body')
+      var profile = document.getElementById('profile')
+      var overlay = document.getElementById('overlay')
+      var icons = document.querySelectorAll('.link i')
+
+      function toggleMode() {
+        if (body.classList.contains('text-gray-900')) {
+          mode = 'night'
+          modeToggler.innerHTML = '☀️';
+          body.classList.remove('text-gray-900')
+          body.classList.add('text-gray-100')
+          profile.classList.remove('bg-white')
+          profile.classList.add('bg-gray-900')
+          overlay.classList.remove('bg-opacity-50')
+          overlay.classList.add('bg-opacity-25')
+          for (var i = 0, len = icons.length; i < len; i++) {
+            icons[i].classList.remove('text-gray-900')
+            icons[i].classList.add('text-gray-600')
+          }
+        } else {
+          mode = 'day'
+          modeToggler.innerHTML = '🌙';
+          body.classList.remove('text-gray-100')
+          body.classList.add('text-gray-900')
+          profile.classList.remove('bg-gray-900')
+          profile.classList.add('bg-white')
+          overlay.classList.remove('bg-opacity-25')
+          overlay.classList.add('bg-opacity-50')
+          for (var i = 0, len = icons.length; i < len; i++) {
+            icons[i].classList.remove('text-gray-600')
+            icons[i].classList.add('text-gray-900')
+          }
+        }
+        localStorage.setItem('mode', mode)
+      }
+
+      if (localStorage.getItem('mode') && localStorage.getItem('mode') != mode) {
+        toggleMode()
+      }
+
+      modeToggler.addEventListener('click', function() {
+        toggleMode()
+      })
+
+      // Toggle background image and movie
+      var bg = 'video';
+      var bgToggler = document.querySelector('.js-change-bg')
+      var video = document.getElementById('video')
+
+      function toggleBg() {
+        if (bg == 'picture') {
+          bg = 'video'
+          bgToggler.innerHTML = '📷';
+          // video.classList.remove('opacity-0')
+          deferSources()
+        } else {
+          bg = 'picture'
+          bgToggler.innerHTML = '🎥';
+          video.classList.add('opacity-0')
+        }
+        localStorage.setItem('bg', bg)
+      }
+
+      if (localStorage.getItem('bg') && localStorage.getItem('bg') != bg) {
+        toggleBg()
+      }
+
+      bgToggler.addEventListener('click', function() {
+        toggleBg()
+      })
+
+      // Defer backgrounds on load
+      function deferBackgrounds() {
+        var backgrounds = document.querySelectorAll('[data-bg-img]')
+        for (var i = 0, len = backgrounds.length; i < len; i++) {
+          if (backgrounds[i].getAttribute('data-bg-img')) {
+            backgrounds[i].style.backgroundImage = 'url('+backgrounds[i].getAttribute('data-bg-img')+')'
+            backgrounds[i].classList.remove('opacity-0')
+          }
+        }
+      }
+
+      // Defer sources on load
+      function deferSources() {
+        var sources = document.querySelectorAll('[data-src]')
+        for (var i = 0, len = sources.length; i < len; i++) {
+          if (sources[i].getAttribute('data-src')) {
+            if (bg == 'video' && sources[i].tagName.toLowerCase() == 'video') {
+              var source = document.createElement('source');
+              source.src = sources[i].getAttribute('data-src');
+              source.type = sources[i].getAttribute('data-type');
+
+              sources[i].innerHTML = ''
+              sources[i].appendChild(source);
+              sources[i].load()
+              sources[i].play()
+              sources[i].classList.remove('opacity-0')
+            } else {
+              sources[i].setAttribute('src', sources[i].getAttribute('data-src'))
+            }
+          }
+        }
+      }
+
+      // On load actions
+      window.onload = function() {
+        deferBackgrounds()
+        deferSources()
+      }
+    </script>
   </body>
 </html>
