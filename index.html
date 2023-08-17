@@ -30,19 +30,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
     <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              clifford: '#da373d',
-            }
-          }
-        }
-      }
-    </script>
+    <link rel="preload" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"></noscript>
+
     <style>
       .text-shadow {
         text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.25);
@@ -61,14 +51,29 @@
       }
     </style>
 
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script async>
+      // Tailwind config customization
+      tailwind.config = {
+          theme: {
+            extend: {
+              colors: {
+                softred: '#d95252',
+              }
+            }
+          }
+        }
+    </script>
+    <script defer src="https://storage.googleapis.com/workbox-cdn/releases/6.4.1/workbox-sw.js"></script>
+
     <link rel="canonical" href="https://revert.pl">
   </head>
 
   <body class="font-sans antialiased text-gray-100 min-h-full h-auto leading-normal tracking-wider">
-    <div class="max-w-5xl flex items-center min-h-full h-auto lg:h-screen flex-wrap mx-auto mt-36 mb-8 lg:my-0">
+    <div class="max-w-4xl xl:max-w-5xl flex items-center min-h-full h-auto lg:h-screen flex-wrap mx-auto mt-36 mb-8 lg:my-0">
       <!-- Background video or image -->
-      <div id="video-container" class="opacity-0 transition-opacity duration-300 fixed z-0 top-0 left-0 right-0 bottom-0 w-full h-full min-h-full overflow-hidden bg-center bg-cover bg-scroll lg:bg-fixed" data-bg-img="media/rw-bg.jpg">
-        <video id="video" class="opacity-0 transition-opacity duration-700 absolute top-0 left-0 min-w-full min-h-full object-cover" muted loop preload="none" data-src="media/video.mov" data-type="video/mp4"></video>
+      <div id="video-container" class="opacity-0 transition-opacity duration-300 fixed z-0 top-0 left-0 right-0 bottom-0 w-full h-full min-h-full overflow-hidden bg-center bg-cover bg-scroll lg:bg-fixed" data-bg-img="media/rw-bg.jpg" data-bg-img-2x="media/rw-bg-2x.jpg">
+        <video id="video" class="opacity-0 transition-opacity duration-700 absolute top-0 left-0 min-w-full min-h-full object-cover" muted loop preload="none" data-src="media/video.mov" data-type="video/mp4" poster="media/rw-bg.jpg"></video>
         <div id="overlay" class="absolute top-0 left-0 w-full h-full z-1 bg-black bg-opacity-25"></div>
       </div>
       <!-- / Background video or image -->
@@ -79,7 +84,7 @@
         <div id="profile" class="relative z-10 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-xl bg-opacity-50 bg-gray-900 transition duration-300 p-4 md:px-10 md:py-6 text-center lg:text-left">
 
           <!-- Image for mobile view -->
-          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-48 w-48 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none" data-bg-img="media/rw-profile.jpg" role="img" aria-label="Robert Wierzchowski photo"><a class="block w-full h-full" href="https://vi7.revert.pl" title="Revert.pl Web Developer Poznań" aria-label="Robert Wierzchowski"></a></div>
+          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-48 w-48 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none" data-bg-img="media/rw-profile.jpg" role="img" aria-label="Robert Wierzchowski smiling outdoor photo" width="192" height="192"><a class="block w-full h-full" href="https://vi7.revert.pl" title="Revert.pl Web Developer Poznań" aria-label="Robert Wierzchowski"></a></div>
           <!-- / Image for mobile view -->
 
           <!-- Main title -->
@@ -161,7 +166,13 @@
       <!-- Dektop Img Col -->
       <div class="relative z-20 w-full lg:w-3/5">
         <!-- Big profile image for side bar (desktop) -->
-        <a href="https://vi7.revert.pl" data-tippy-content="Revert.pl Web Developer Poznań" aria-label="Revert.pl Web Developer Poznań" class="link block"><img src="media/rw-profile-2x.jpg" alt="Robert Wierzchowski photo" width="614" height="614" class="rounded-none lg:rounded-lg shadow-2xl hidden lg:block transform transition-transform duration-300 hover:scale-105 focus:scale-105"></a>
+        <a href="https://vi7.revert.pl" data-tippy-content="Revert.pl Web Developer Poznań" aria-label="Revert.pl Web Developer Poznań" class="link block">
+          <picture class="block rounded-none lg:rounded-lg overflow-hidden  shadow-2xl hidden lg:block transform transition-transform duration-300 hover:scale-105 focus:scale-105">
+            <source media="(max-width: 1279.99px)" srcset="media/rw-profile.jpg" />
+            <source media="(min-width: 1280px)" srcset="media/rw-profile-2x.jpg" />
+            <img src="media/rw-profile-2x.jpg" alt="Robert Wierzchowski smiling outdoor photo" width="614" height="614" />
+          </picture>
+        </a>
         <!--/ Big profile image for side bar (desktop) -->
       </div>
       <!--/ Dektop Img Col -->
@@ -175,14 +186,9 @@
       <!-- / Pin to top right corner -->
     </div>
 
-    <script src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
-    <script src="https://unpkg.com/tippy.js@4"></script>
+    <script defer src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
+    <script defer src="https://unpkg.com/tippy.js@4"></script>
     <script>
-      // Init tooltips
-      tippy('.link', {
-        placement: 'bottom',
-      })
-
       // Toggle language between PL and EN
       var lang = 'en';
       var langToggler = document.querySelector('.js-change-lang')
@@ -304,12 +310,16 @@
 
       // Defer backgrounds on load
       function deferBackgrounds() {
+        const vp2x = 576
+        const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0)
         var backgrounds = document.querySelectorAll('[data-bg-img]')
         for (var i = 0, len = backgrounds.length; i < len; i++) {
-          if (backgrounds[i].getAttribute('data-bg-img')) {
+          if (backgrounds[i].getAttribute('data-bg-img-2x') && vw >= vp2x) {
+            backgrounds[i].style.backgroundImage = 'url('+backgrounds[i].getAttribute('data-bg-img-2x')+')'
+          } else if (backgrounds[i].getAttribute('data-bg-img')) {
             backgrounds[i].style.backgroundImage = 'url('+backgrounds[i].getAttribute('data-bg-img')+')'
-            backgrounds[i].classList.remove('opacity-0')
           }
+          backgrounds[i].classList.remove('opacity-0')
         }
       }
 
@@ -337,8 +347,20 @@
 
       // On load actions
       window.onload = function() {
+        // Init tooltips
+        tippy('.link', {
+          placement: 'bottom',
+        })
+        // Run defer functions
         deferBackgrounds()
         deferSources()
+      }
+
+      // Register the SW from the Workbox CDN
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', function() {
+          navigator.serviceWorker.register('/service-worker.js')
+        })
       }
     </script>
   </body>
