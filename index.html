@@ -71,16 +71,17 @@
 
   <body class="font-sans antialiased text-gray-100 min-h-full h-auto leading-normal tracking-wider">
     <div class="max-w-4xl xl:max-w-5xl flex items-center min-h-full h-auto lg:h-screen flex-wrap mx-auto mt-36 mb-8 lg:my-0">
+
       <!-- Background video or image -->
       <div id="video-container" class="opacity-0 transition-opacity duration-300 fixed z-0 top-0 left-0 right-0 bottom-0 w-full h-full min-h-full overflow-hidden bg-center bg-cover bg-scroll lg:bg-fixed" data-bg-img="media/rw-bg.jpg" data-bg-img-2x="media/rw-bg-2x.jpg">
-        <video id="video" class="opacity-0 transition-opacity duration-700 absolute top-0 left-0 min-w-full min-h-full object-cover" muted loop preload="none" data-src="media/video.mov" data-type="video/mp4" poster="media/rw-bg.jpg"></video>
+        <video id="video" class="opacity-0 transition-opacity duration-700 absolute top-0 left-0 min-w-full min-h-full object-cover" muted loop preload="none" data-src="media/video.mov" data-type="video/mp4" poster="media/rw-bg.jpg" width="100%" height="100%"></video>
         <div id="overlay" class="absolute top-0 left-0 w-full h-full z-1 bg-black bg-opacity-25"></div>
       </div>
       <!-- / Background video or image -->
 
       <!-- Main Col -->
       <main class="w-full h-auto lg:w-2/5 mx-4 lg:mx-0">
-
+        <!-- Profile Desc -->
         <div id="profile" class="relative z-10 rounded-lg lg:rounded-l-lg lg:rounded-r-none shadow-xl bg-opacity-50 bg-gray-900 transition duration-300 p-4 md:px-10 md:py-6 text-center lg:text-left">
 
           <!-- Image for mobile view -->
@@ -92,24 +93,24 @@
           <!-- / Main title -->
 
           <!-- Underline -->
-          <div class="mx-auto w-4/5 pt-3 mb-1 border-b-2 border-cyan-400"></div>
+          <div role="figure" class="mx-auto w-4/5 pt-3 mb-1 border-b-2 border-cyan-400"></div>
           <!-- / Underline -->
 
           <!-- Main info -->
           <div class="flex justify-center sm:block">
             <div class="flex flex-col sm:flex-row lg:flex-col sm:justify-between self-center">
               <a href="https://revert.pl" data-tippy-content="Revert.pl" class="link pt-2 text-sm font-bold lg:text-sm inline-flex items-center self-start lg:justify-start text-gray-200 hover:text-cyan-400">
-                <i class="fas fa-user-circle text-xl transform transition-transform duration-300 hover:scale-110 pr-4"></i>
+                <i role="img" aria-label="user icon" class="fas fa-user-circle text-xl transform transition-transform duration-300 hover:scale-110 pr-4"></i>
                 Riwert / Revert.pl
               </a>
               <a href="https://github.com/riwert" data-tippy-content="GitHub Riwert" class="link pt-2 text-sm font-bold inline-flex items-center self-start lg:justify-start text-gray-200 hover:text-cyan-400">
-                <i class="fas fa-briefcase text-xl transform transition-transform duration-300 hover:scale-110 pr-4"></i>
+                <i role="img" aria-label="briefcase icon" class="fas fa-briefcase text-xl transform transition-transform duration-300 hover:scale-110 pr-4"></i>
                 <span class="mr-1 js-lang-en">Programmer</span>
                 <span class="mr-1 js-lang-pl hidden opacity-0">Programista</span>
                  / Web Developer
               </a>
               <a href="https://www.google.com/maps/place/Poznań/" data-tippy-content="Poznań" class="link pt-2 text-sm font-bold lg:text-sm inline-flex items-center self-start lg:justify-start text-gray-200 hover:text-cyan-400">
-                <i class="fas fa-globe-europe text-xl transform transition-transform duration-300 hover:scale-110 pr-4"></i>
+                <i role="img" aria-label="globe europe icon" class="fas fa-globe-europe text-xl transform transition-transform duration-300 hover:scale-110 pr-4"></i>
                 <span class="mr-1 js-lang-en">Poland</span>
                 <span class="mr-1 js-lang-pl hidden opacity-0">Polska</span>
                  / Poznań
@@ -139,27 +140,28 @@
           <!-- Social icons -->
           <div class="mt-2 pb-4 lg:pb-0 w-4/5 lg:w-full mx-auto flex flex-wrap items-center justify-between">
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="tel:+48503529991" data-tippy-content="Tel." aria-label="Tel.">
-              <i class="fas fa-mobile-alt text-2xl"></i>
+              <i role="img" aria-label="mobile icon" class="fas fa-mobile-alt text-2xl"></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="mailto:revert@revert.pl" data-tippy-content="Email" aria-label="Email">
-              <i class="far fa-envelope text-2xl"></i>
+              <i role="img" aria-label="envelope icon" class="far fa-envelope text-2xl"></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://github.com/riwert" data-tippy-content="GitHub" aria-label="GitHub" target="_blank" rel="noopener">
-              <i class="fab fa-github text-2xl"></i>
+              <i role="img" aria-label="github icon" class="fab fa-github text-2xl"></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.facebook.com/riwert" data-tippy-content="Facebook" aria-label="Facebook" target="_blank" rel="noopener">
-              <i class="fab fa-facebook text-2xl"></i>
+              <i role="img" aria-label="facebook icon" class="fab fa-facebook text-2xl"></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.youtube.com/@RiwertV" data-tippy-content="YouTube" aria-label="YouTube" target="_blank" rel="noopener">
-              <i class="fab fa-youtube text-2xl"></i>
+              <i role="img" aria-label="youtube icon" class="fab fa-youtube text-2xl"></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.linkedin.com/in/robert-wierzchowski/" data-tippy-content="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener">
-              <i class="fab fa-linkedin text-2xl"></i>
+              <i role="img" aria-label="linkedin icon" class="fab fa-linkedin text-2xl"></i>
             </a>
           </div>
           <!-- / Social icons -->
 
         </div>
+        <!-- / Profile Desc -->
       </main>
       <!-- / Main Col -->
 
@@ -178,10 +180,19 @@
       <!--/ Dektop Img Col -->
 
       <!-- Pin to top right corner -->
-      <div class="absolute top-0 right-0 h-12 w-full p-4 flex justify-between sm:justify-end items-center">
-        <button class="link js-change-lang inline-block transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white mx-4" data-tippy-content="Polish / English" aria-label="Polish / English">PL</button>
-        <button class="link js-change-bg inline-block transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white mx-4" data-tippy-content="Picture / Video" aria-label="Picture / Video">📷</button>
-        <button class="link js-change-theme inline-block transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white mx-4" data-tippy-content="Day / Night" aria-label="Day / Night">☀️</button>
+      <div class="absolute top-0 right-0 h-12 w-full flex justify-between sm:justify-end items-center">
+        <button class="link js-change-lang flex align-center transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white m-4" data-tippy-content="Polish / English" aria-label="Polish / English">
+          <i role="img" aria-label="language icon" class="fas fa-language text-xl pr-1"></i>
+          <span class="lang-label font-bold text-xl height-full">PL</span>
+        </button>
+        <button class="link js-change-bg flex align-center transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white m-4" data-tippy-content="Picture / Video" aria-label="Picture / Video">
+          <i role="img" aria-label="image icon" class="icon-image fas fa-image text-xl"></i>
+          <i role="img" aria-label="video icon" class="icon-video hidden opacity-0 fas fa-video text-xl"></i>
+        </button>
+        <button class="link js-change-theme flex align-center transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white m-4" data-tippy-content="Day / Night" aria-label="Day / Night">
+          <i role="img" aria-label="sun icon" class="icon-day hidden opacity-0 fas fa-sun text-xl"></i>
+          <i role="img" aria-label="moon icon" class="icon-night fas fa-moon text-xl"></i>
+        </button>
       </div>
       <!-- / Pin to top right corner -->
     </div>
@@ -189,18 +200,21 @@
     <script defer src="https://unpkg.com/popper.js@1/dist/umd/popper.min.js"></script>
     <script defer src="https://unpkg.com/tippy.js@4"></script>
     <script>
-      // Toggle language between PL and EN
-      var lang = 'en';
+      // Language initial options
+      var lang = 'en'
       var langToggler = document.querySelector('.js-change-lang')
+      var langLabel = langToggler.querySelector('.lang-label')
       var html = document.querySelector('html')
 
+      // Toggle language between PL and EN
       function toggleLang() {
-        if (langToggler.innerText == 'PL') {
+        if (langLabel.innerText == 'PL') {
           lang = 'pl'
-          langToggler.innerText = 'EN'
+          langLabel.innerText = 'EN'
 
           var plTexts = document.querySelectorAll('.js-lang-pl')
           for (var i = 0, len = plTexts.length; i < len; i++) {
+            plTexts[i].classList.remove('hidden', 'opacity-0')
             plTexts[i].classList.remove('hidden', 'opacity-0')
           }
 
@@ -210,7 +224,7 @@
           }
         } else {
           lang = 'en'
-          langToggler.innerText = 'PL'
+          langLabel.innerText = 'PL'
 
           var enTexts = document.querySelectorAll('.js-lang-en')
           for (var i = 0, len = enTexts.length; i < len; i++) {
@@ -226,26 +240,30 @@
         localStorage.setItem('lang', lang)
       }
 
+      // Load saved language on init
       if (localStorage.getItem('lang') && localStorage.getItem('lang') != lang) {
         toggleLang()
       }
 
+      // Bind toggle language on click
       langToggler.addEventListener('click', function() {
         toggleLang()
       })
 
-      // Toggle day and night mode
-      var mode = 'night';
+      // Day and night initial options
+      var mode = 'night'
       var modeToggler = document.querySelector('.js-change-theme')
       var body = document.querySelector('body')
       var profile = document.getElementById('profile')
       var overlay = document.getElementById('overlay')
       var links = document.querySelectorAll('main .link')
 
+      // Toggle day and night mode
       function toggleMode() {
-        if (body.classList.contains('text-gray-900')) {
+        if (mode == 'day') {
           mode = 'night'
-          modeToggler.innerHTML = '☀️';
+          modeToggler.querySelector('.icon-night').classList.remove('hidden', 'opacity-0')
+          modeToggler.querySelector('.icon-day').classList.add('hidden', 'opacity-0')
           body.classList.remove('text-gray-900')
           body.classList.add('text-gray-100')
           profile.classList.remove('bg-white')
@@ -258,7 +276,8 @@
           }
         } else {
           mode = 'day'
-          modeToggler.innerHTML = '🌙';
+          modeToggler.querySelector('.icon-day').classList.remove('hidden', 'opacity-0')
+          modeToggler.querySelector('.icon-night').classList.add('hidden', 'opacity-0')
           body.classList.remove('text-gray-100')
           body.classList.add('text-gray-900')
           profile.classList.remove('bg-gray-900')
@@ -270,40 +289,49 @@
             links[i].classList.add('text-gray-900')
           }
         }
+        // Save mode
         localStorage.setItem('mode', mode)
       }
 
+      // Load saved mode on init
       if (localStorage.getItem('mode') && localStorage.getItem('mode') != mode) {
         toggleMode()
       }
 
+      // Bind toggle mode on click
       modeToggler.addEventListener('click', function() {
         toggleMode()
       })
 
-      // Toggle background image and movie
-      var bg = 'video';
+      // Background image and movie init options
+      var bg = 'video'
       var bgToggler = document.querySelector('.js-change-bg')
       var video = document.getElementById('video')
 
+      // Toggle background image and movie
       function toggleBg() {
-        if (bg == 'picture') {
+        if (bg == 'image') {
           bg = 'video'
-          bgToggler.innerHTML = '📷';
+          bgToggler.querySelector('.icon-video').classList.add('hidden', 'opacity-0')
+          bgToggler.querySelector('.icon-image').classList.remove('hidden', 'opacity-0')
           // video.classList.remove('opacity-0')
           deferSources()
         } else {
-          bg = 'picture'
-          bgToggler.innerHTML = '🎥';
+          bg = 'image'
+          bgToggler.querySelector('.icon-image').classList.add('hidden', 'opacity-0')
+          bgToggler.querySelector('.icon-video').classList.remove('hidden', 'opacity-0')
           video.classList.add('opacity-0')
         }
+        // Save bg
         localStorage.setItem('bg', bg)
       }
 
+      // Load saved bg on init
       if (localStorage.getItem('bg') && localStorage.getItem('bg') != bg) {
         toggleBg()
       }
 
+      // Bind toggle bg on click
       bgToggler.addEventListener('click', function() {
         toggleBg()
       })
@@ -329,12 +357,12 @@
         for (var i = 0, len = sources.length; i < len; i++) {
           if (sources[i].getAttribute('data-src')) {
             if (bg == 'video' && sources[i].tagName.toLowerCase() == 'video') {
-              var source = document.createElement('source');
-              source.src = sources[i].getAttribute('data-src');
-              source.type = sources[i].getAttribute('data-type');
+              var source = document.createElement('source')
+              source.src = sources[i].getAttribute('data-src')
+              source.type = sources[i].getAttribute('data-type')
 
               sources[i].innerHTML = ''
-              sources[i].appendChild(source);
+              sources[i].appendChild(source)
               sources[i].load()
               sources[i].play()
               sources[i].classList.remove('opacity-0')
