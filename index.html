@@ -69,7 +69,7 @@
     <link rel="canonical" href="https://revert.pl">
   </head>
 
-  <body class="font-sans antialiased text-gray-100 min-h-full h-auto leading-normal tracking-wider">
+  <body class="font-sans antialiased text-gray-200 min-h-full h-auto leading-normal tracking-wider">
     <div class="max-w-4xl xl:max-w-5xl flex items-center min-h-full h-auto lg:h-screen flex-wrap mx-auto mt-36 mb-8 lg:my-0">
 
       <!-- Background video or image -->
@@ -179,16 +179,18 @@
       <!-- Pin to top right corner -->
       <div class="absolute top-0 right-0 h-12 w-full flex justify-between sm:justify-end items-center">
         <button class="link js-change-lang flex align-center transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white m-4" data-tippy-content="Polish / English" aria-label="Polish / English">
-          <i role="img" aria-label="language icon" class="fas fa-language text-xl pr-1"></i>
-          <span class="lang-label font-bold text-xl height-full">PL</span>
+          <!-- <i role="img" aria-label="language icon" class="fas fa-language text-xl pr-1"></i> -->
+          <i role="img" aria-label="EN" class="lang-icon icon-en fas fa-flag-usa"></i>
+          <i role="img" aria-label="PL" class="hidden lang-icon icon-pl fas fa-flag-checkered"></i>
+          <!-- <span class="hidden lang-label font-bold text-xl height-full">PL</span> -->
         </button>
         <button class="link js-change-bg flex align-center transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white m-4" data-tippy-content="Picture / Video" aria-label="Picture / Video">
-          <i role="img" aria-label="image icon" class="icon-image fas fa-image text-xl"></i>
-          <i role="img" aria-label="video icon" class="icon-video hidden opacity-0 fas fa-video text-xl"></i>
+          <i role="img" aria-label="video icon" class="icon-video fas fa-video text-xl"></i>
+          <i role="img" aria-label="image icon" class="hidden opacity-0 icon-image fas fa-image text-xl"></i>
         </button>
         <button class="link js-change-theme flex align-center transform transition-transform duration-300 hover:scale-125 focus:scale-125 focus:outline-none text-white m-4" data-tippy-content="Day / Night" aria-label="Day / Night">
-          <i role="img" aria-label="sun icon" class="icon-day hidden opacity-0 fas fa-sun text-xl"></i>
-          <i role="img" aria-label="moon icon" class="icon-night fas fa-moon text-xl"></i>
+          <i role="img" aria-label="sun icon" class="icon-day fas fa-sun text-xl"></i>
+          <i role="img" aria-label="moon icon" class="icon-night hidden opacity-0 fas fa-moon text-xl"></i>
         </button>
       </div>
       <!-- / Pin to top right corner -->
@@ -200,14 +202,17 @@
       // Language initial options
       var lang = 'en'
       var langToggler = document.querySelector('.js-change-lang')
-      var langLabel = langToggler.querySelector('.lang-label')
       var html = document.querySelector('html')
 
       // Toggle language between PL and EN
       function toggleLang() {
-        if (langLabel.innerText == 'PL') {
+        var activeLangIcon = langToggler.querySelector('.lang-icon:not(.hidden)')
+        var inactiveLangIcon = langToggler.querySelector('.lang-icon.hidden')
+        activeLangIcon.classList.add('hidden', 'opacity-0')
+        inactiveLangIcon.classList.remove('hidden', 'opacity-0')
+
+        if (activeLangIcon.getAttribute('aria-label') == 'EN') {
           lang = 'pl'
-          langLabel.innerText = 'EN'
 
           var plTexts = document.querySelectorAll('.js-lang-pl')
           for (var i = 0, len = plTexts.length; i < len; i++) {
@@ -221,7 +226,6 @@
           }
         } else {
           lang = 'en'
-          langLabel.innerText = 'PL'
 
           var enTexts = document.querySelectorAll('.js-lang-en')
           for (var i = 0, len = enTexts.length; i < len; i++) {
@@ -248,7 +252,7 @@
       })
 
       // Day and night initial options
-      var mode = 'night'
+      var mode = 'day'
       var modeToggler = document.querySelector('.js-change-theme')
       var body = document.querySelector('body')
       var profile = document.getElementById('profile')
@@ -262,7 +266,7 @@
           modeToggler.querySelector('.icon-night').classList.remove('hidden', 'opacity-0')
           modeToggler.querySelector('.icon-day').classList.add('hidden', 'opacity-0')
           body.classList.remove('text-gray-900')
-          body.classList.add('text-gray-100')
+          body.classList.add('text-gray-200')
           profile.classList.remove('bg-white')
           profile.classList.add('bg-gray-900')
           overlay.classList.remove('bg-opacity-50')
@@ -275,7 +279,7 @@
           mode = 'day'
           modeToggler.querySelector('.icon-day').classList.remove('hidden', 'opacity-0')
           modeToggler.querySelector('.icon-night').classList.add('hidden', 'opacity-0')
-          body.classList.remove('text-gray-100')
+          body.classList.remove('text-gray-200')
           body.classList.add('text-gray-900')
           profile.classList.remove('bg-gray-900')
           profile.classList.add('bg-white')
@@ -309,14 +313,14 @@
       function toggleBg() {
         if (bg == 'image') {
           bg = 'video'
-          bgToggler.querySelector('.icon-video').classList.add('hidden', 'opacity-0')
-          bgToggler.querySelector('.icon-image').classList.remove('hidden', 'opacity-0')
+          bgToggler.querySelector('.icon-image').classList.add('hidden', 'opacity-0')
+          bgToggler.querySelector('.icon-video').classList.remove('hidden', 'opacity-0')
           // video.classList.remove('opacity-0')
           deferSources()
         } else {
           bg = 'image'
-          bgToggler.querySelector('.icon-image').classList.add('hidden', 'opacity-0')
-          bgToggler.querySelector('.icon-video').classList.remove('hidden', 'opacity-0')
+          bgToggler.querySelector('.icon-video').classList.add('hidden', 'opacity-0')
+          bgToggler.querySelector('.icon-image').classList.remove('hidden', 'opacity-0')
           video.classList.add('opacity-0')
         }
         // Save bg
