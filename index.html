@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en"
-  :lang="{'pl': lang == 'pl'}"
+<html lang="pl"
+  :lang="{'en': lang == 'en'}"
 >
   <head>
     <meta charset="UTF-8">
@@ -8,19 +8,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title
-      x-text=="lang == 'pl' ? 'Robert Wierzchowski Programmer / Web Developer Revert' : 'Robert Wierzchowski Programista / Web Developer Revert'"
-    >Robert Wierzchowski Programmer / Web Developer Revert</title>
+      x-text="lang == 'en' ? 'Robert Wierzchowski Programmer / Web Developer Revert' : 'Robert Wierzchowski Programista / Web Developer Revert'"
+    >Robert Wierzchowski Programista / Web Developer Revert</title>
 
     <meta name="description"
-      content="Welcome, my name is Robert, I'm from Nowogard. I live in Poznan where I program and create WWW. Find out more about me."
-      :content="{'Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Dowiedzieć się czegoś więcej o mnie.': lang == 'pl'}"
+      content="Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Dowiedzieć się czegoś więcej o mnie."
+      :content="{'Welcome, my name is Robert, I am from Nowogard. I live in Poznan where I program and create WWW. Find out more about me.': lang == 'en'}"
     >
     <meta name="author" content="revert@revert.pl">
 
     <link rel="canonical" href="https://revert.pl">
 
     <meta property="og:title" content="Revert.pl Robert Wierzchowski">
-    <meta property="og:description" content="Programmer / Front-end / Web Developer">
+    <meta property="og:description" content="Web Developer / Front-end / Programmer">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://revert.pl">
     <meta property="og:image" content="https://revert.pl/media/rw-profile-2x.jpg">
@@ -166,7 +166,7 @@
       // AlpineJS
       function init() {
         this.bg = localStorage.getItem('bg') || 'vid'
-        this.lang = localStorage.getItem('lang') || 'en'
+        this.lang = localStorage.getItem('lang') || 'pl'
         this.theme = localStorage.getItem('theme') || 'light'
 
         // Run async
@@ -177,8 +177,8 @@
           deferSources()
             
           // Start typing words
-          typeWords(welcomesEn, currentIndexEn, 'terminal-en')
           typeWords(welcomesPl, currentIndexPl, 'terminal-pl')
+          typeWords(welcomesEn, currentIndexEn, 'terminal-en')
 
         }, 1)
       }
@@ -194,7 +194,7 @@
       }
 
       function toggleLang() {
-        var lang = this.lang === 'en' ? 'pl' : 'en'
+        var lang = this.lang === 'pl' ? 'en' : 'pl'
         localStorage.setItem('lang', lang)
         this.lang = lang
       }
@@ -260,23 +260,6 @@
           <!-- / Underline -->
 
           <!-- Description -->
-          <div x-show="lang == 'en'" x-cloak class="pt-2 md:pt-4 text-sm text-center">
-
-            <!-- Terminal EN -->
-            <h2 class="inline-flex mb-2">
-              <span id="terminal-en"></span>
-              <span class="cursor-blink inline-block w-2.5 h-5 bg-opacity-75"
-                :class="theme == 'dark' ? 'bg-white' : 'bg-black'"
-              ></span>
-            </h2>
-            <!-- / Terminal EN -->
-
-            <p class="mb-2">My name is <strong>Robert</strong>, I'm from <strong>Nowogard</strong>.
-              I live in <strong>Poznan</strong> where I <strong>program</strong> and <strong class="whitespace-nowrap">create WWW</strong>.</p>
-            <p class="mb-2">I'm passionate about <strong>the Web</strong>, <strong>music</strong>, and <strong>positive psychology</strong>.
-              I like <strong>simple yet effective solutions</strong>, <strong>good patterns</strong> and <strong>balanced work</strong>.</p>
-            <p class="mb-2">In my free time, I enjoy various forms of <strong>recreational activities on the move</strong>.</p>
-          </div>
           <div x-show="lang == 'pl'" x-cloak class="pt-2 md:pt-4 text-sm text-center">
 
             <!-- Terminal PL -->
@@ -292,6 +275,23 @@
             <p class="mb-2">Pasjonuje mnie <strong>Web</strong>, <strong>muzyka</strong> i <strong>pozytywna psychologia</strong>. Lubię <strong>proste i skuteczne rozwiązania</strong>, <strong>dobre wzorce</strong> oraz <strong>zrównoważoną pracę</strong>.</p>
             <p class="mb-2">W wolnym czasie korzystam z przeróżnych form <strong>aktywności rekreacyjnych w ruchu</strong>.</p>
           </div>
+          <div x-show="lang == 'en'" x-cloak class="pt-2 md:pt-4 text-sm text-center">
+
+            <!-- Terminal EN -->
+            <h2 class="inline-flex mb-2">
+              <span id="terminal-en"></span>
+              <span class="cursor-blink inline-block w-2.5 h-5 bg-opacity-75"
+                :class="theme == 'dark' ? 'bg-white' : 'bg-black'"
+              ></span>
+            </h2>
+            <!-- / Terminal EN -->
+
+            <p class="mb-2">My name is <strong>Robert</strong>, I am from <strong>Nowogard</strong>.
+              I live in <strong>Poznan</strong> where I <strong>program</strong> and <strong class="whitespace-nowrap">create WWW</strong>.</p>
+            <p class="mb-2">I am passionate about <strong>the Web</strong>, <strong>music</strong>, and <strong>positive psychology</strong>.
+              I like <strong>simple yet effective solutions</strong>, <strong>good patterns</strong> and <strong>balanced work</strong>.</p>
+            <p class="mb-2">In my free time, I enjoy various forms of <strong>recreational activities on the move</strong>.</p>
+          </div>
           <!-- / Description -->
 
           <!-- CTA -->
@@ -299,8 +299,8 @@
             <a class="cta-btn link inline-block min-w-[50%] md:min-w-[33%] md:w-1/3 lg:w-3/4 bg-gradient-to-br from-cyan-500 to-cyan-300 hover:from-cyan-300 hover:to-cyan-500 focus:ring-2 active:ring-0 focus:ring-cyan-200 dark:focus:ring-cyan-800 border-b-4 border-cyan-800 hover:border-cyan-700 focus:border-cyan-700 active:border-b-0 active:mb-1 transform transition-all duration-500 hover:scale-105 focus:scale-105 focus:outline-none font-bold uppercase text-shadow active:text-shadow-lg py-2 px-4 rounded-lg" href="https://vi7.revert.pl" data-tippy-content="Vi7.Revert.PL"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <span x-show="lang == 'en'" x-cloak>View more</span>
               <span x-show="lang == 'pl'" x-cloak>Zobacz więcej</span>
+              <span x-show="lang == 'en'" x-cloak>View more</span>
             </a>
           </div>
           <!-- / CTA -->
@@ -348,7 +348,7 @@
       <!-- Dektop Img Col -->
       <div class="relative z-20 w-full lg:w-3/5 xl:w-3/6">
         <!-- Big profile image for side bar (desktop) -->
-        <a href="https://vi7.revert.pl" data-tippy-content="Robert Wierzchowski - Vi7 Revert.pl" aria-label="Revert.pl Web Developer of the Vi7" class="link block">
+        <a href="https://vi7.revert.pl" data-tippy-content="Robert Wierzchowski - Vi7 Revert.pl" aria-label="Robert Wierzchowski - Vi7 Revert.pl" class="link block">
           <picture class="block rounded-none lg:rounded-lg overflow-hidden  shadow-2xl hidden lg:block transform transition-transform duration-300 hover:opacity-100 hover:scale-105 focus:scale-105"
           :class="theme == 'dark' ? 'opacity-75' : 'opacity-85'"
           >
@@ -369,18 +369,18 @@
 
           <!-- Lang Toggle -->
           <div class="flex items-center m-2 md:m-4">
-            <label for="lang-toggle" class="mr-2"><i role="img" aria-label="EN" class="fas fa-flag-usa"></i></label>
+            <label for="lang-toggle" class="mr-2"><i role="img" aria-label="PL" class="fas fa-flag-checkered"></i></label>
             <button id="lang-toggle" @click="toggleLang" class="toggle-switch bg-opacity-65 link relative inline-flex flex-shrink-0 h-6 w-12 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200"
-              data-tippy-content="English / Polish" :data-tippy-content="lang == 'pl' ? 'Angielski / Polski' : 'English / Polish'"
-              aria-label="English / Polish" :aria-label="lang == 'pl' ? 'Angielski / Polski' : 'English / Polish'"
+              data-tippy-content="Polski / Angielski" :data-tippy-content="lang == 'en' ? 'Polish / English' : 'Polski / Angielski'"
+              aria-label="Polski / Angielski" :aria-label="lang == 'en' ? 'Polish / English' : 'Polski / Angielski'"
               :class="theme == 'dark' ? 'bg-white border-white' : 'bg-gray-900 border-gray-900'"
             >
-              <span class="sr-only">Toggle language</span>
+              <span class="sr-only" x-text="{'Toggle language': lang == 'en'}">Przełącz język</span>
               <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-200"
-                :class="{ 'translate-x-6': lang === 'pl', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
+                :class="{ 'translate-x-6': lang == 'en', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
               ></span>
             </button>
-            <label for="lang-toggle" class="ml-2"><i role="img" aria-label="PL" class="fas fa-flag-checkered"></i></label>
+            <label for="lang-toggle" class="ml-2"><i role="img" aria-label="EN" class="fas fa-flag-usa"></i></label>
           </div>
           <!-- / Lang Toggle -->
 
@@ -388,11 +388,11 @@
           <div class="flex items-center m-2 md:m-4">
             <label for="theme-bg" class="mr-2"><i role="img" aria-label="video icon" class="fas fa-film"></i></label>
             <button id="theme-bg" @click="toggleBg" class="toggle-switch bg-opacity-65 link relative inline-flex flex-shrink-0 h-6 w-12 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200"
-              data-tippy-content="Video / Picture" :data-tippy-content="lang == 'pl' ? 'Wideo / Zdjęcie' : 'Video / Picture'"
-              aria-label="Video / Picture" :aria-label="lang == 'pl' ? 'Wideo / Zdjęcie' : 'Video / Picture'"
+              data-tippy-content="Wideo / Zdjęcie" :data-tippy-content="lang == 'en' ? 'Video / Picture' : 'Wideo / Zdjęcie'"
+              aria-label="Wideo / Zdjęcie" :aria-label="lang == 'en' ? 'Video / Picture' : 'Wideo / Zdjęcie'"
               :class="theme == 'dark' ? 'bg-white border-white' : 'bg-gray-900 border-gray-900'"
             >
-              <span class="sr-only">Toggle background</span>
+              <span class="sr-only" x-text="{'Toggle background': lang == 'en'}">Przełącz tło</span>
               <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-200"
                 :class="{ 'translate-x-6': bg === 'img', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
               ></span>
@@ -405,11 +405,11 @@
           <div class="flex items-center m-2">
             <label for="theme-toggle" class="mr-2"><i role="img" aria-label="sun icon" class="fas fa-sun"></i></label>
             <button id="theme-toggle" @click="toggleTheme" class="toggle-switch bg-opacity-65 link relative inline-flex flex-shrink-0 h-6 w-12 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200"
-              data-tippy-content="Day / Night" :data-tippy-content="lang == 'pl' ? 'Dzień / Noc' : 'Day / Night'"
-              aria-label="Day / Night" :aria-label="lang == 'pl' ? 'Dzień / Noc' : 'Day / Night'"
+              data-tippy-content="Dzień / Noc" :data-tippy-content="lang == 'en' ? 'Day / Night' : 'Dzień / Noc'"
+              aria-label="Dzień / Noc" :aria-label="lang == 'en' ? 'Day / Night' : 'Dzień / Noc'"
               :class="theme == 'dark' ? 'bg-white border-white' : 'bg-gray-900 border-gray-900'"
             >
-              <span class="sr-only">Toggle theme mode</span>
+              <span class="sr-only"  x-text="{'Toggle theme mode': lang == 'en'}">Przełącz jasność motywu</span>
               <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-200"
                 :class="{ 'translate-x-6': theme === 'dark', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
               ></span>
