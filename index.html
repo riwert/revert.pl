@@ -7,23 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <title>Robert Wierzchowski - Programmer / Web Developer - Revert | Riwert</title>
+    <title
+      x-text=="lang == 'pl' ? 'Robert Wierzchowski Programmer / Web Developer Revert' : 'Robert Wierzchowski Programista / Web Developer Revert'"
+    >Robert Wierzchowski Programmer / Web Developer Revert</title>
 
     <meta name="description"
-      content="Welcome, my name is Robert, I'm from Nowogard. I live in Poznan where I program and create WWW. Take a look at my website for simple projects and to find out more about me."
-      :content="{'Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Zajrzyj na moją stronę, aby zapoznać się z moimi projektami i dowiedzieć się czegoś więcej o mnie.': lang == 'pl'}"
+      content="Welcome, my name is Robert, I'm from Nowogard. I live in Poznan where I program and create WWW. Find out more about me."
+      :content="{'Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Dowiedzieć się czegoś więcej o mnie.': lang == 'pl'}"
     >
     <meta name="author" content="revert@revert.pl">
 
     <link rel="canonical" href="https://revert.pl">
 
-    <meta property="og:title" content="Revert.pl Robert Wierzchowski aka Riwert">
+    <meta property="og:title" content="Revert.pl Robert Wierzchowski">
     <meta property="og:description" content="Programmer / Front-end / Web Developer">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://revert.pl">
     <meta property="og:image" content="https://revert.pl/media/rw-profile-2x.jpg">
 
-    <meta name="twitter:title" content="Revert.pl Robert Wierzchowski aka Riwert">
+    <meta name="twitter:title" content="Revert.pl Robert Wierzchowski">
     <meta name="twitter:description" content="Web Developer / Front-end / Programmer">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:image" content="https://revert.pl/media/rw-profile-2x.jpg">
@@ -32,10 +34,10 @@
     <meta name="msapplication-TileColor" content="#33D3EC">
 
     <link rel="manifest" href="./site.webmanifest">
-    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-    <link rel="icon" type="image/x-icon" href="favicon/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
+    <link rel="icon" type="image/x-icon" href="./favicon/favicon.ico">
 
     <link rel="preload" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"></noscript>
@@ -223,13 +225,13 @@
 
       <!-- Background video or image -->
       <div id="bg-container" class="opacity-0 transition-opacity ease-in-out delay-500 duration-500 fixed z-0 top-0 left-0 right-0 bottom-0 w-full h-full min-h-full overflow-hidden bg-center bg-cover bg-scroll lg:bg-fixed"
-        data-bg-img="media/rw-bg.jpg" data-bg-img-2x="media/rw-bg-2x.jpg"
+        data-bg-img="./media/rw-bg.jpg" data-bg-img-2x="./media/rw-bg-2x.jpg"
       >
         <video id="video"
           class="opacity-0 transition-opacity ease-in-out delay-500 duration-700 absolute top-0 left-0 min-w-full min-h-full object-cover"
           :class="bg == 'vid' ? 'opacity-100' : 'opacity-0'"
           muted loop playsInline webkit-playsinline preload="none"
-          data-src="media/video.mov" data-src-2x="media/video-2x.mov" data-type="video/mp4" poster="media/rw-bg.jpg"
+          data-src="./media/video.mov" data-src-2x="./media/video-2x.mov" data-type="video/mp4" poster="./media/rw-bg.jpg"
           title="Colorful autumn forest seen from a bird POV" aria-label="Colorful autumn forest seen from a bird POV"
         ></video>
         <div id="overlay" class="absolute top-0 left-0 w-full h-full z-1 bg-black"
@@ -246,7 +248,7 @@
         >
 
           <!-- Image for mobile view -->
-          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-40 w-40 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none" data-bg-img="media/rw-profile.jpg" role="img" aria-label="Robert Wierzchowski smiling outdoor photo"><a class="block w-full h-full" href="https://vi7.revert.pl" title="Revert.pl Web Developer Poznań" aria-label="Robert Wierzchowski"></a></div>
+          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-40 w-40 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none" data-bg-img="./media/rw-profile.jpg" role="img" aria-label="Robert Wierzchowski smiling outdoor photo"><a class="block w-full h-full" href="https://vi7.revert.pl" title="Revert.pl Web Developer Poznań" aria-label="Robert Wierzchowski"></a></div>
           <!-- / Image for mobile view -->
 
           <!-- Main title -->
@@ -350,9 +352,9 @@
           <picture class="block rounded-none lg:rounded-lg overflow-hidden  shadow-2xl hidden lg:block transform transition-transform duration-300 hover:opacity-100 hover:scale-105 focus:scale-105"
           :class="theme == 'dark' ? 'opacity-75' : 'opacity-85'"
           >
-            <source media="(max-width: 1279.99px)" srcset="media/rw-profile.jpg">
-            <source media="(min-width: 1280px)" srcset="media/rw-profile-2x.jpg">
-            <img src="media/rw-profile-2x.jpg" alt="Robert Wierzchowski smiling outdoor photo" width="614" height="614">
+            <source media="(max-width: 1279.99px)" srcset="./media/rw-profile.jpg">
+            <source media="(min-width: 1280px)" srcset="./media/rw-profile-2x.jpg">
+            <img src="./media/rw-profile-2x.jpg" alt="Robert Wierzchowski smiling outdoor photo" width="614" height="614">
           </picture>
         </a>
         <!--/ Big profile image for side bar (desktop) -->
