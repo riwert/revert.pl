@@ -123,7 +123,19 @@
         >
 
           <!-- Image for mobile view -->
-          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-40 w-40 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none" data-bg-img="./media/rw-profile.jpg" role="img" aria-label="Robert Wierzchowski smiling outdoor photo"><a class="block w-full h-full" href="https://vi7.revert.pl" title="Revert.pl Web Developer Poznań" aria-label="Robert Wierzchowski"></a></div>
+          <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-40 w-40 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none"
+            data-bg-img="./media/rw-profile.jpg"
+            role="img"
+            aria-label="Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym"
+            :aria-label="lang == 'en' ? 'Robert Wierzchowski smiling on outdoor photo' : 'Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym'"
+          >
+            <a class="block w-full h-full" href="https://vi7.revert.pl"
+              title="Vi7 Revert.pl Strona Projektu"
+              aria-label="Vi7 Revert.pl Strona Projektu"
+              :title="lang == 'en' ? 'Vi7 Revert.pl Project Website' : 'Vi7 Revert.pl Strona Projektu'"
+              :aria-label="lang == 'en' ? 'Vi7 Revert.pl Project Website' : 'Vi7 Revert.pl Strona Projektu'"
+            ></a>
+          </div>
           <!-- / Image for mobile view -->
 
           <!-- Main title -->
@@ -235,24 +247,24 @@
       </main>
       <!-- / Main Col -->
 
-      <!-- Dektop Img Col -->
+      <!-- Desktop Img Col -->
       <div class="relative z-20 w-full lg:w-3/5 xl:w-3/6">
         <!-- Big profile image for side bar (desktop) -->
         <a href="https://vi7.revert.pl" data-tippy-content="Robert Wierzchowski - Vi7 Revert.pl" aria-label="Robert Wierzchowski - Vi7 Revert.pl" class="link block">
           <picture class="block rounded-none lg:rounded-lg overflow-hidden  shadow-2xl hidden lg:block transform transition-transform duration-300 hover:opacity-100 hover:scale-105 focus:scale-105"
-          :class="theme == 'dark' ? 'opacity-75' : 'opacity-85'"
+            :class="theme == 'dark' ? 'opacity-75' : 'opacity-85'"
           >
             <source media="(max-width: 1279.99px)" srcset="./media/rw-profile.jpg">
             <source media="(min-width: 1280px)" srcset="./media/rw-profile-2x.jpg">
             <img src="./media/rw-profile-2x.jpg" width="614" height="614"
               alt="Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym"
-              :alt="lang == 'en' ? 'Robert Wierzchowski smiling outdoor photo' : 'Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym'"
+              :alt="lang == 'en' ? 'Robert Wierzchowski smiling on outdoor photo' : 'Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym'"
             >
           </picture>
         </a>
         <!--/ Big profile image for side bar (desktop) -->
       </div>
-      <!--/ Dektop Img Col -->
+      <!--/ Desktop Img Col -->
 
       <!-- Pin to top right corner -->
       <div class="absolute top-0 right-0 w-full md:w-auto">
