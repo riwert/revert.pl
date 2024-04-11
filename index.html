@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pl-PL"
-  :lang="{'en': lang == 'en'}"
+  :lang="lang == 'en' ? 'en' : 'pl-PL'"
 >
   <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
 
     <meta name="description"
       content="Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Dowiedzieć się czegoś więcej o mnie."
-      :content="{'Welcome, my name is Robert, I am from Nowogard. I live in Poznan where I program and create WWW. Find out more about me.': lang == 'en'}"
+      :content="lang == 'en' ? 'Welcome, my name is Robert, I am from Nowogard. I live in Poznan where I program and create WWW. Find out more about me.': 'Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Dowiedzieć się czegoś więcej o mnie.'"
     >
     <meta name="author" content="revert@revert.pl">
 
@@ -105,9 +105,11 @@
           :class="bg == 'vid' ? 'opacity-100' : 'opacity-0'"
           muted loop playsInline webkit-playsinline preload="none"
           data-src="./media/video.mov" data-src-2x="./media/video-2x.mov" data-type="video/mp4" poster="./media/rw-bg.jpg"
-          title="Colorful autumn forest seen from a bird POV" aria-label="Colorful autumn forest seen from a bird POV"
+          title="Kolorowy jesienny las widziany z lotu ptaka" aria-label="Kolorowy jesienny las widziany z lotu ptaka"
+          :title="lang == 'en' ? 'Colorful autumn forest seen from a bird POV' : 'Kolorowy jesienny las widziany z lotu ptaka'"
+          :aria-label="lang == 'en' ? 'Colorful autumn forest seen from a bird POV' : 'Kolorowy jesienny las widziany z lotu ptaka'"
         ></video>
-        <div id="overlay" class="absolute top-0 left-0 w-full h-full z-1 bg-black"
+        <div role="figure" id="overlay" class="absolute top-0 left-0 w-full h-full z-1 bg-black"
           :class="theme == 'dark' ? 'bg-opacity-50' : 'bg-opacity-25'"
         ></div>
       </div>
@@ -137,7 +139,7 @@
 
             <!-- Terminal PL -->
             <h2 class="inline-flex mb-2">
-              <span id="terminal-pl"></span>
+              <span id="terminal-pl">Cześć</span>
               <span class="cursor-blink inline-block w-2.5 h-5 bg-opacity-75"
                 :class="theme == 'dark' ? 'bg-white' : 'bg-black'"
               ></span>
@@ -152,7 +154,7 @@
 
             <!-- Terminal EN -->
             <h2 class="inline-flex mb-2">
-              <span id="terminal-en"></span>
+              <span id="terminal-en">Hi</span>
               <span class="cursor-blink inline-block w-2.5 h-5 bg-opacity-75"
                 :class="theme == 'dark' ? 'bg-white' : 'bg-black'"
               ></span>
@@ -183,22 +185,34 @@
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="tel:+48503529991" data-tippy-content="Tel." aria-label="Tel."
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <i role="img" aria-label="mobile icon" class="fas fa-mobile-alt text-2xl"></i>
+              <i role="img" class="fas fa-mobile-alt text-2xl"
+                aria-label="telefon ikona"
+                :aria-label="lang == 'en' ? 'mobile icon' : 'telefon ikona'"
+              ></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="mailto:revert@revert.pl" data-tippy-content="Email" aria-label="Email"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <i role="img" aria-label="envelope icon" class="far fa-envelope text-2xl"></i>
+              <i role="img" class="far fa-envelope text-2xl"
+                aria-label="koperta ikona"
+                :aria-label="lang == 'en' ? 'envelope icon' : 'koperta ikona'"
+              ></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://github.com/riwert" data-tippy-content="GitHub" aria-label="GitHub" target="_blank" rel="noopener"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <i role="img" aria-label="github icon" class="fab fa-github text-2xl"></i>
+              <i role="img" class="fab fa-github text-2xl"
+                aria-label="github ikona"
+                :aria-label="lang == 'en' ? 'github icon' : 'github ikona'"
+              ></i>
             </a>
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.facebook.com/riwert" data-tippy-content="Facebook" aria-label="Facebook" target="_blank" rel="noopener"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <i role="img" aria-label="facebook icon" class="fab fa-facebook text-2xl"></i>
+              <i role="img" class="fab fa-facebook text-2xl"
+                aria-label="facebook ikona"
+                :aria-label="lang == 'en' ? 'facebook icon' : 'facebook ikona'"
+              ></i>
             </a>
             <!-- a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.youtube.com/@RiwertV" data-tippy-content="YouTube" aria-label="YouTube" target="_blank" rel="noopener"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
@@ -208,7 +222,10 @@
             <a class="link transform transition-transform duration-300 text-gray-200 hover:text-cyan-400 hover:scale-125 focus:scale-125 focus:outline-none" href="https://www.linkedin.com/in/robert-wierzchowski/" data-tippy-content="LinkedIn" aria-label="LinkedIn" target="_blank" rel="noopener"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <i role="img" aria-label="linkedin icon" class="fab fa-linkedin text-2xl"></i>
+              <i role="img" class="fab fa-linkedin text-2xl"
+                aria-label="linkedin ikona"
+                :aria-label="lang == 'en' ? 'linkedin icon' : 'linkedin ikona'"
+              ></i>
             </a>
           </div>
           <!-- / Social icons -->
@@ -227,7 +244,10 @@
           >
             <source media="(max-width: 1279.99px)" srcset="./media/rw-profile.jpg">
             <source media="(min-width: 1280px)" srcset="./media/rw-profile-2x.jpg">
-            <img src="./media/rw-profile-2x.jpg" alt="Robert Wierzchowski smiling outdoor photo" width="614" height="614">
+            <img src="./media/rw-profile-2x.jpg" width="614" height="614"
+              alt="Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym"
+              :alt="lang == 'en' ? 'Robert Wierzchowski smiling outdoor photo' : 'Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym'"
+            >
           </picture>
         </a>
         <!--/ Big profile image for side bar (desktop) -->
@@ -242,52 +262,52 @@
 
           <!-- Lang Toggle -->
           <div class="flex items-center m-2 md:m-4">
-            <label for="lang-toggle" class="mr-2"><i role="img" aria-label="PL" class="fas fa-flag-checkered"></i></label>
+            <label for="lang-toggle" class="mr-2"><i role="img" aria-label="Ikona języka PL" :aria-label="lang == 'en' ? 'Icon language PL' : 'Ikona języka PL'" class="fas fa-flag-checkered"></i></label>
             <button id="lang-toggle" @click="toggleLang" class="toggle-switch bg-opacity-65 link relative inline-flex flex-shrink-0 h-6 w-12 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200"
               data-tippy-content="Polski / Angielski" :data-tippy-content="lang == 'en' ? 'Polish / English' : 'Polski / Angielski'"
               aria-label="Polski / Angielski" :aria-label="lang == 'en' ? 'Polish / English' : 'Polski / Angielski'"
               :class="theme == 'dark' ? 'bg-white border-white' : 'bg-gray-900 border-gray-900'"
             >
-              <span class="sr-only" x-text="{'Toggle language': lang == 'en'}">Przełącz język</span>
+              <span class="sr-only" x-text="lang == 'en' ? 'Toggle language' : 'Przełącz język'">Przełącz język</span>
               <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-200"
                 :class="{ 'translate-x-6': lang == 'en', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
               ></span>
             </button>
-            <label for="lang-toggle" class="ml-2"><i role="img" aria-label="EN" class="fas fa-flag-usa"></i></label>
+            <label for="lang-toggle" class="ml-2"><i role="img" aria-label="Ikona języka EN" :aria-label="lang == 'en' ? 'Icon language EN' : 'Ikona języka EN'" class="fas fa-flag-usa"></i></label>
           </div>
           <!-- / Lang Toggle -->
 
           <!-- Bg Toggle -->
           <div class="flex items-center m-2 md:m-4">
-            <label for="theme-bg" class="mr-2"><i role="img" aria-label="video icon" class="fas fa-film"></i></label>
+            <label for="theme-bg" class="mr-2"><i role="img" aria-label="wideo ikona" :aria-label="lang == 'en' ? 'video icon' : 'wideo ikona'" class="fas fa-film"></i></label>
             <button id="theme-bg" @click="toggleBg" class="toggle-switch bg-opacity-65 link relative inline-flex flex-shrink-0 h-6 w-12 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200"
               data-tippy-content="Wideo / Zdjęcie" :data-tippy-content="lang == 'en' ? 'Video / Picture' : 'Wideo / Zdjęcie'"
               aria-label="Wideo / Zdjęcie" :aria-label="lang == 'en' ? 'Video / Picture' : 'Wideo / Zdjęcie'"
               :class="theme == 'dark' ? 'bg-white border-white' : 'bg-gray-900 border-gray-900'"
             >
-              <span class="sr-only" x-text="{'Toggle background': lang == 'en'}">Przełącz tło</span>
+              <span class="sr-only" x-text="lang == 'en' ? 'Toggle background' : 'Przełącz tło'">Przełącz tło</span>
               <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-200"
                 :class="{ 'translate-x-6': bg === 'img', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
               ></span>
             </button>
-            <label for="theme-bg" class="ml-2"><i role="img" aria-label="image icon" class="fas fa-image"></i></label>
+            <label for="theme-bg" class="ml-2"><i role="img" aria-label="zdjęcie ikona" :aria-label="lang == 'en' ? 'picture icon' : 'zdjęcie ikona'" class="fas fa-image"></i></label>
           </div>
           <!-- / Bg Toggle -->
 
           <!-- Theme Toggle -->
           <div class="flex items-center m-2">
-            <label for="theme-toggle" class="mr-2"><i role="img" aria-label="sun icon" class="fas fa-sun"></i></label>
+            <label for="theme-toggle" class="mr-2"><i role="img" aria-label="słońce ikona" :aria-label="lang == 'en' ? 'sun icon' : 'słońce ikona'" class="fas fa-sun"></i></label>
             <button id="theme-toggle" @click="toggleTheme" class="toggle-switch bg-opacity-65 link relative inline-flex flex-shrink-0 h-6 w-12 border-2 rounded-full cursor-pointer transition-colors ease-in-out duration-200"
               data-tippy-content="Dzień / Noc" :data-tippy-content="lang == 'en' ? 'Day / Night' : 'Dzień / Noc'"
               aria-label="Dzień / Noc" :aria-label="lang == 'en' ? 'Day / Night' : 'Dzień / Noc'"
               :class="theme == 'dark' ? 'bg-white border-white' : 'bg-gray-900 border-gray-900'"
             >
-              <span class="sr-only"  x-text="{'Toggle theme mode': lang == 'en'}">Przełącz jasność motywu</span>
+              <span class="sr-only" x-text="lang == 'en' ? 'Toggle theme mode' : 'Przełącz jasność motywu'">Przełącz jasność motywu</span>
               <span aria-hidden="true" class="pointer-events-none inline-block h-5 w-5 rounded-full shadow transform ring-0 transition ease-in-out duration-200"
                 :class="{ 'translate-x-6': theme === 'dark', 'bg-gray-900': theme == 'dark', 'bg-white': theme == 'light' }"
               ></span>
             </button>
-            <label for="theme-toggle" class="ml-2"><i role="img" aria-label="moon icon" class="far fa-moon"></i></label>
+            <label for="theme-toggle" class="ml-2"><i role="img" aria-label="księżyc ikona" :aria-label="lang == 'en' ? 'moon icon' : 'księżyc ikona'" class="far fa-moon"></i></label>
           </div>
           <!-- / Theme Toggle -->
 
