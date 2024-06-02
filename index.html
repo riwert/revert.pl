@@ -422,9 +422,10 @@
 
       // AlpineJS
       function init() {
-        this.bg = localStorage.getItem('bg') || 'vid'
-        this.lang = localStorage.getItem('lang') || 'pl'
-        this.theme = localStorage.getItem('theme') || 'light'
+        // Defaults
+        this.bg = localStorage.getItem('bg') == 'img' ? 'img' : 'vid'
+        this.lang = localStorage.getItem('lang') == 'en' ? 'en' : 'pl'
+        this.theme = localStorage.getItem('theme') == 'dark' ? 'dark' : 'light'
 
         // Run async
         setTimeout(function () {
