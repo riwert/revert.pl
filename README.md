@@ -1,3 +1,3 @@
 # Revert.pl
 
-An example of a simple static business card page with Alpine JS with Vanilla JS, Tailwind CSS and semantic HTML.
+A simple and accessible personal static landing page built with Alpine.js, Tailwind CSS, and semantic HTML.
