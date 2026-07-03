@@ -8,8 +8,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <title
-      x-text="lang == 'en' ? 'Robert Wierzchowski Programmer / Web Developer Revert' : 'Robert Wierzchowski Programista / Web Developer Revert'"
-    >Robert Wierzchowski Programista / Web Developer Revert</title>
+      x-text="lang == 'en' ? 'Robert Wierzchowski Programmer / Web Developer Revert PL' : 'Robert Wierzchowski Programista / Web Developer Revert PL'"
+    >Robert Wierzchowski Programista / Web Developer Revert PL</title>
 
     <meta name="description"
       content="Witaj, mam na imię Robert, pochodzę z Nowogardu. Mieszkam w Poznaniu gdzie programuję i tworzę WWW. Dowiedzieć się czegoś więcej o mnie."
@@ -23,12 +23,12 @@
     <meta property="og:description" content="Web Developer / Front-end / Programmer">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://revert.pl">
-    <meta property="og:image" content="https://revert.pl/media/rw-profile-2x.jpg">
+    <meta property="og:image" content="https://revert.pl/media/rw-profil-on-white-2x.jpg">
 
     <meta name="twitter:title" content="Revert.pl Robert Wierzchowski">
     <meta name="twitter:description" content="Web Developer / Front-end / Programmer">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:image" content="https://revert.pl/media/rw-profile-2x.jpg">
+    <meta name="twitter:image" content="https://revert.pl/media/rw-profil-on-white-2x.jpg">
 
     <meta name="theme-color" content="#33D3EC">
     <meta name="msapplication-TileColor" content="#33D3EC">
@@ -98,13 +98,13 @@
 
       <!-- Background video or image -->
       <div id="bg-container" class="opacity-0 transition-opacity ease-in-out delay-500 duration-500 fixed z-0 top-0 left-0 right-0 bottom-0 w-full h-full min-h-full overflow-hidden bg-center bg-cover bg-scroll lg:bg-fixed"
-        data-bg-img="./media/rw-bg.jpg" data-bg-img-2x="./media/rw-bg-2x.jpg"
+        data-bg-img="./media/rw-bg-jumper-1x.jpg" data-bg-img-2x="./media/rw-bg-jumper-1x.jpg"
       >
         <video id="video"
           class="opacity-0 transition-opacity ease-in-out delay-500 duration-700 absolute top-0 left-0 min-w-full min-h-full object-cover"
           :class="bg == 'vid' ? 'opacity-100' : 'opacity-0'"
           muted loop playsInline webkit-playsinline preload="none"
-          data-src="./media/video.mov" data-src-2x="./media/video-2x.mov" data-type="video/mp4" poster="./media/rw-bg.jpg"
+          data-src="./media/video.mov" data-src-2x="./media/video-2x.mov" data-type="video/mp4" poster="./media/rw-bg-jumper-1x.jpg"
           title="Kolorowy jesienny las widziany z lotu ptaka" aria-label="Kolorowy jesienny las widziany z lotu ptaka"
           :title="lang == 'en' ? 'Colorful autumn forest seen from a bird POV' : 'Kolorowy jesienny las widziany z lotu ptaka'"
           :aria-label="lang == 'en' ? 'Colorful autumn forest seen from a bird POV' : 'Kolorowy jesienny las widziany z lotu ptaka'"
@@ -124,7 +124,7 @@
 
           <!-- Image for mobile view -->
           <div class="block lg:hidden relative z-20 rounded-full shadow-xl mx-auto -mt-24 h-40 w-40 bg-cover bg-center transform transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none"
-            data-bg-img="./media/rw-profile.jpg"
+            data-bg-img="./media/rw-profil-on-white-1x.jpg"
             role="img"
             aria-label="Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym"
             :aria-label="lang == 'en' ? 'Robert Wierzchowski smiling on outdoor photo' : 'Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym'"
@@ -158,9 +158,27 @@
             </h2>
             <!-- / Terminal PL  -->
 
-            <p class="mb-2">Mam na imię <strong>Robert</strong>, pochodzę z <strong>Nowogardu</strong>. Mieszkam w <strong>Poznaniu</strong> gdzie <strong>programuję</strong> i <strong class="whitespace-nowrap">tworzę WWW</strong>.</p>
-            <p class="mb-2">Pasjonuje mnie <strong>Web</strong>, <strong>muzyka</strong> i <strong>pozytywna psychologia</strong>. Lubię <strong>proste i skuteczne rozwiązania</strong>, <strong>dobre wzorce</strong> oraz <strong>zrównoważoną pracę</strong>.</p>
-            <p class="mb-2">W wolnym czasie korzystam z przeróżnych form <strong>aktywności rekreacyjnych w ruchu</strong>.</p>
+            
+            <p class="mb-2">
+              Mam na imię <strong>Robert</strong>, pochodzę z
+              <strong>Nowogardu</strong>. Obecnie mieszkam w
+              <strong>Poznaniu</strong>, gdzie pracuję i rozwijam
+              <strong>swoje zainteresowania</strong>.
+            </p>
+
+            <p class="mb-2">
+              Pasjonuje mnie <strong>Web</strong>, <strong>muzyka</strong>, <strong>salsa</strong>
+              oraz <strong>przywództwo przez pozytywną psychologię</strong>. Cenię
+              <strong>proste i skuteczne rozwiązania</strong>,
+              <strong>dobre wzorce</strong> i
+              <strong>zrównoważoną pracę</strong>.
+            </p>
+
+            <p class="mb-2">
+              W wolnym czasie lubię różne formy
+              <strong>aktywności rekreacyjnych</strong> w ruchu.
+            </p>
+
           </div>
           <div x-show="lang == 'en'" x-cloak class="pt-2 md:pt-4 text-sm text-center">
 
@@ -173,21 +191,45 @@
             </h2>
             <!-- / Terminal EN -->
 
-            <p class="mb-2">My name is <strong>Robert</strong>, I am from <strong>Nowogard</strong>.
-              I live in <strong>Poznan</strong> where I <strong>program</strong> and <strong class="whitespace-nowrap">create WWW</strong>.</p>
-            <p class="mb-2">I am passionate about <strong>the Web</strong>, <strong>music</strong>, and <strong>positive psychology</strong>.
-              I like <strong>simple yet effective solutions</strong>, <strong>good patterns</strong> and <strong>balanced work</strong>.</p>
-            <p class="mb-2">In my free time, I enjoy various forms of <strong>recreational activities on the move</strong>.</p>
+            <p class="mb-2">
+              My name is <strong>Robert</strong>, I come from
+              <strong>Nowogard</strong>. Now I live in
+              <strong>Poznan</strong>, where I work and developing
+              <strong>my interests</strong>.
+            </p>
+
+            <p class="mb-2">
+              I am passionate about <strong>the Web</strong>,
+              <strong>music</strong>, <strong>salsa</strong>, and
+              <strong>leadership with positive psychology</strong>. I appreciate
+              <strong>simple yet effective solutions</strong>,
+              <strong>good patterns</strong>, and
+              <strong>balanced work</strong>.
+            </p>
+
+            <p class="mb-2">
+              In my free time, I enjoy various forms of
+              <strong>recreational activity on the move</strong>.
+            </p>
+
           </div>
           <!-- / Description -->
 
           <!-- CTA -->
           <div class="pt-2 pb-2 text-center">
-            <a class="cta-btn link inline-block min-w-[50%] md:min-w-[33%] md:w-1/3 lg:w-3/4 bg-gradient-to-br from-cyan-500 to-cyan-300 hover:from-cyan-300 hover:to-cyan-500 focus:ring-2 active:ring-0 focus:ring-cyan-200 dark:focus:ring-cyan-800 border-b-4 border-cyan-800 hover:border-cyan-700 focus:border-cyan-700 active:border-b-0 active:mb-1 transform transition-all duration-500 hover:scale-105 focus:scale-105 focus:outline-none font-bold uppercase text-shadow active:text-shadow-lg py-2 px-4 rounded-lg" href="https://vi7.revert.pl" data-tippy-content="Vi7.Revert.PL"
+            <a x-show="lang == 'pl'" x-cloak
+              class="cta-btn link inline-block min-w-[50%] md:min-w-[33%] md:w-1/3 lg:w-3/4 bg-gradient-to-br from-cyan-500 to-cyan-300 hover:from-cyan-300 hover:to-cyan-500 focus:ring-2 active:ring-0 focus:ring-cyan-200 dark:focus:ring-cyan-800 border-b-4 border-cyan-800 hover:border-cyan-700 focus:border-cyan-700 active:border-b-0 active:mb-1 transform transition-all duration-500 hover:scale-105 focus:scale-105 focus:outline-none font-bold uppercase text-shadow active:text-shadow-lg py-2 px-4 rounded-lg"
+              href="https://vi7.revert.pl" data-tippy-content="Vi7.Revert.PL"
               :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
             >
-              <span x-show="lang == 'pl'" x-cloak>Zobacz więcej</span>
-              <span x-show="lang == 'en'" x-cloak>View more</span>
+              <span>Zobacz więcej</span>
+            </a>
+            <a x-show="lang == 'en'" x-cloak
+              class="cta-btn link inline-block min-w-[50%] md:min-w-[33%] md:w-1/3 lg:w-3/4 bg-gradient-to-br from-cyan-500 to-cyan-300 hover:from-cyan-300 hover:to-cyan-500 focus:ring-2 active:ring-0 focus:ring-cyan-200 dark:focus:ring-cyan-800 border-b-4 border-cyan-800 hover:border-cyan-700 focus:border-cyan-700 active:border-b-0 active:mb-1 transform transition-all duration-500 hover:scale-105 focus:scale-105 focus:outline-none font-bold uppercase text-shadow active:text-shadow-lg py-2 px-4 rounded-lg"
+              href="https://en.vi7.revert.pl" data-tippy-content="Vi7.Revert.PL"
+              :class="theme == 'dark' ? 'text-white' : 'text-gray-900'"
+            >
+              <span>View more</span>
             </a>
           </div>
           <!-- / CTA -->
@@ -251,14 +293,14 @@
       <div class="relative z-20 w-full lg:w-3/5 xl:w-3/6">
         <!-- Big profile image for side bar (desktop) -->
         <a href="https://vi7.revert.pl" data-tippy-content="Robert Wierzchowski - Vi7 Revert.pl" aria-label="Robert Wierzchowski - Vi7 Revert.pl" class="link block">
-          <picture class="block rounded-none lg:rounded-lg overflow-hidden  shadow-2xl hidden lg:block transform transition-transform duration-300 hover:opacity-100 hover:scale-105 focus:scale-105"
-            :class="theme == 'dark' ? 'opacity-75' : 'opacity-85'"
+          <picture class="block rounded-none lg:rounded-lg overflow-hidden shadow-2xl hidden lg:block transform transition-opacity transition-opacity duration-[5000ms] opacity-100 hover:opacity-5 focus:opacity-5"
+            :class="theme == 'dark' ? 'opacity-100' : 'opacity-100'"
           >
-            <source media="(max-width: 1279.99px)" srcset="./media/rw-profile.jpg">
-            <source media="(min-width: 1280px)" srcset="./media/rw-profile-2x.jpg">
-            <img src="./media/rw-profile-2x.jpg" width="614" height="614"
-              alt="Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym"
-              :alt="lang == 'en' ? 'Robert Wierzchowski smiling on outdoor photo' : 'Robert Wierzchowski uśmiechnięty na zdjęciu plenerowym'"
+            <source media="(max-width: 1279.99px)" srcset="./media/rw-profil-on-white-1x.jpg">
+            <source media="(min-width: 1280px)" srcset="./media/rw-profil-on-white-2x.jpg">
+            <img src="./media/rw-profil-on-white-1x.jpg" width="512" height="512"
+              alt="Robert Wierzchowski na białym tle"
+              :alt="lang == 'en' ? 'Robert Wierzchowski on white background' : 'Robert Wierzchowski na białym tle'"
             >
           </picture>
         </a>
@@ -396,8 +438,8 @@
         }
       }
 
-      var welcomesEn = ['Hi!', 'Hey!', 'Hello!', 'Welcome!', 'Good day!', 'Good evening!']
-      var welcomesPl = ['Cześć!', 'Hej!', 'Siemanko!', 'Witaj!', 'Dzień dobry!', 'Dobry wieczór!']
+      var welcomesEn = ['Hi!', 'Hello!', 'Hey you!', 'Warmly welcome!', 'Good morning!', 'Good evening!']
+      var welcomesPl = ['Cześć!', 'Hejka!', 'Siemanko!', 'Witaj serdecznie!', 'Dzień dobry!', 'Dobry wieczór!']
       var currentIndexEn = 0
       var currentIndexPl = 0
 
